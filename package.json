@@ -1,17 +1,29 @@
 {
+  "name": "zod-query",
+  "version": "0.0.0",
+  "license": "MIT",
+  "description": "A query language for Zod schemas and your own database",
   "private": true,
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "prepare": "husky install",
+    "packages:build": "pnpm run build --filter zod-query",
+    "packages:release": "changesets publish",
+    "release:create": "changesets version",
+    "release": "pnpm run packages:build && pmpm run packages:release",
+    "typecheck": "turbo run typecheck"
   },
   "devDependencies": {
-    "eslint": "^8.48.0",
-    "prettier": "^3.0.3",
+    "@changesets/cli": "2.26.2",
+    "eslint": "8.50.0",
+    "husky": "8.0.3",
+    "prettier": "3.0.3",
+    "prettier-plugin-tailwindcss": "0.5.5",
     "tsconfig": "workspace:*",
-    "turbo": "latest"
+    "turbo": "1.10.15"
   },
-  "packageManager": "pnpm@8.6.10",
-  "name": "zod-query"
+  "packageManager": "pnpm@8.6.10"
 }

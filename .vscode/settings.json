@@ -1,7 +1,4 @@
 {
-  "eslint.workingDirectories": [
-    {
-      "mode": "auto"
-    }
-  ]
+  "prettier.configPath": ".prettierrc.json",
+  "prettier.prettierPath": "./node_modules/prettier/index.cjs",
 }
