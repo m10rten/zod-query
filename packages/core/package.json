@@ -9,7 +9,9 @@
     "build": "tsup src/index.ts --format cjs,esm --dts",
     "lint": "eslint src/**/*.ts",
     "test": "jest",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test:coverage": "jest --coverage",
+    "test:ci": "jest --ci --passWithNoTests"
   },
   "keywords": [
     "zod",
@@ -25,9 +27,11 @@
     "zod": "3.22.4"
   },
   "devDependencies": {
+    "@types/jest": "29.5.5",
     "@typescript-eslint/eslint-plugin": "6.7.4",
     "@typescript-eslint/parser": "6.7.4",
     "eslint": "8.50.0",
+    "ts-jest": "29.1.1",
     "tsup": "7.2.0",
     "typescript": "5.2.2",
     "typescript-eslint": "0.0.1-alpha.0"
