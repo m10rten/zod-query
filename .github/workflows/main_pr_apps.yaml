@@ -1,4 +1,4 @@
-name: main_pr_opened
+name: main pr apps
 on:
   pull_request:
     branches:
