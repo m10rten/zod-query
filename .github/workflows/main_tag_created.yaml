@@ -24,7 +24,7 @@ jobs:
       # publish
       - name: Create release PR and publish packages
         id: changesets
-        uses: changesets/action@1.4.5
+        uses: changesets/action@v1.4.5
         with:
           publish: pnpm run packages:build
         # env:
