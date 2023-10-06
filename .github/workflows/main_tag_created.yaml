@@ -1,8 +1,7 @@
 name: main_tag_created
 on:
-  push:
-    tags:
-      - main
+  release:
+    types: [created]
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
