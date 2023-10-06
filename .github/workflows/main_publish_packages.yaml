@@ -26,12 +26,19 @@ jobs:
       - run: pnpm i --frozen-lockfile
         name: Install dependencies
 
+      - name: Check packages and create build
+        run: pnpm turbo --filter "./packages/**" build test lint typecheck
+        env:
+          CI: true
+
       # publish
       - name: Create release PR and publish packages
         id: changesets
         uses: changesets/action@v1.4.5
         with:
-          publish: pnpm run packages:release
+          commit: "chore(release): 📦 version packages"
+          title: "chore(release): 📦 version packages"
+          publish: pnpm exec changeset publish
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
