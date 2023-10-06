@@ -1,5 +1,9 @@
 name: Publish main
 on:
+  workflow_run:
+    workflows: ["main_pr_packages"]
+    types:
+      - completed
   push:
     branches:
       - main

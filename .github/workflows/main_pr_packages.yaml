@@ -1,4 +1,4 @@
-name: main pr packages
+name: main_pr_packages
 on:
   pull_request:
     branches:
