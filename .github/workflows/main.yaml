@@ -1,11 +1,12 @@
-name: main pr apps
+name: CI
 on:
   pull_request:
     branches:
       - main
-    paths:
-      - "apps/**"
-      - "./.github/workflows/main_pr_apps.yaml"
+      - dev
+  push:
+    branches:
+      - dev
 jobs:
   ci:
     runs-on: ubuntu-latest
@@ -22,8 +23,8 @@ jobs:
       # install
       - run: pnpm i --frozen-lockfile
       # lint
-      - run: pnpm run apps:lint
+      - run: pnpm run lint
       # build
-      - run: pnpm run apps:build
+      - run: pnpm run build
       # test
-      - run: pnpm run apps:test
+      - run: pnpm run test
