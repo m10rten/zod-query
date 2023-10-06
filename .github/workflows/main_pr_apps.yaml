@@ -5,6 +5,7 @@ on:
       - main
     paths:
       - "apps/**"
+      - "./.github/workflows/main_pr_apps.yaml"
 jobs:
   ci:
     runs-on: ubuntu-latest

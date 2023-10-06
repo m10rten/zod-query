@@ -9,6 +9,7 @@ on:
       - main
     paths:
       - "packages/**"
+      - "./.github/workflows/main_publish_packages.yaml"
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
