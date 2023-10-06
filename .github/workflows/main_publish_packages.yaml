@@ -6,6 +6,7 @@ on:
     paths:
       - "packages/**"
       - "./.github/workflows/main_publish_packages.yaml"
+      - "./.changeset/**"
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
