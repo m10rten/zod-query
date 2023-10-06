@@ -4,4 +4,4 @@
 
 ### Patch Changes
 
-- 0bdd52a: Initial package
+- 0bdd52a: Initial package release
