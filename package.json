@@ -13,6 +13,7 @@
     "format": "prettier --write \"**/*.{ts,tsx,md,css,scss,mdx,json,yaml}\"",
     "packages:test": "turbo run test --filter=./packages/*",
     "packages:build": "turbo run build --filter=./packages/*",
+    "packages:lint": "turbo run lint --filter=./packages/*",
     "packages:release": "changesets publish",
     "release:create": "changesets version",
     "release": "pnpm run packages:build && pmpm run packages:release",
