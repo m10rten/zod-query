@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-console
 console.info(`
   Thanks for installing 'zod-query'!
-  This is the initial 0.0.1 version with no functionality.
+  This is the 0.0.2 version with no functionality.
 `);
