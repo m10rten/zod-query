@@ -1,7 +1,10 @@
-name: main_tag_created
+name: Publish main
 on:
-  release:
-    types: [created]
+  push:
+    branches:
+      - main
+    paths:
+      - "packages/**"
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
@@ -26,6 +29,7 @@ jobs:
         id: changesets
         uses: changesets/action@v1.4.5
         with:
-          publish: pnpm run packages:build
-        # env:
-        #   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          publish: pnpm run packages:release
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

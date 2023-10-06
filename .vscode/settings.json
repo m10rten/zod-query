@@ -1,4 +1,4 @@
 {
   "prettier.configPath": ".prettierrc.json",
-  "prettier.prettierPath": "./node_modules/prettier/index.cjs",
+  "prettier.prettierPath": "./node_modules/prettier/index.cjs"
 }
