@@ -1,11 +1,10 @@
 name: main_pr_opened
 on:
   pull_request:
-    types: [opened]
     branches:
       - main
     paths:
-      - "packages/**"
+      - "apps/**"
 jobs:
   ci:
     runs-on: ubuntu-latest

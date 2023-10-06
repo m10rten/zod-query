@@ -1,7 +1,6 @@
 name: main_pr_opened
 on:
   pull_request:
-    types: [opened]
     branches:
       - main
     paths:
