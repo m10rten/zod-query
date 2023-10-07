@@ -1,5 +1,11 @@
 # zod-query
 
+## 0.0.3
+
+### Patch Changes
+
+- bb9c36d: Added npm ignore file
+
 ## 0.0.2
 
 ### Patch Changes
