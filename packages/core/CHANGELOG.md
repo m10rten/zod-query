@@ -1,5 +1,11 @@
 # zod-query
 
+## 0.0.4
+
+### Patch Changes
+
+- 032f6ae: package json exclude files
+
 ## 0.0.3
 
 ### Patch Changes
