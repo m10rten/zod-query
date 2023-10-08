@@ -22,6 +22,15 @@ yarn add zod-query
 pnpm add zod-query
 ```
 
+## Planned features
+
+- [ ] Runtime Zod support for Prisma (get Zod types from generated Prisma client)
+- [ ] Runtime Zod support for Drizzle (get Zod types from Drizzle schemas)
+- [ ] Create adapter spec for easy-to-make adapters for other ORMs/datasources.
+- [ ] Support for raw SQL queries
+- [ ] Data validation for input in adapters
+- [ ] Act-as-DTO for models, get a specific data shape from a model
+
 ## Usage
 
 ### Using an adapter (recommended)
