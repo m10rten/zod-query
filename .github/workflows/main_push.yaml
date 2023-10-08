@@ -22,7 +22,7 @@ jobs:
       - run: pnpm i --frozen-lockfile
         name: Install dependencies
 
-      - name: Check packages and create build
+      - name: Check packages and create build 📦,🧪,🔨,⚡
         run: pnpm turbo --filter "./packages/**" build test lint typecheck
         env:
           CI: true
