@@ -6,7 +6,7 @@
   "types": "dist/index.d.ts",
   "module": "dist/index.mjs",
   "scripts": {
-    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "build": "tsup --format cjs,esm --dts",
     "lint": "eslint src/**/*.ts",
     "test": "jest",
     "typecheck": "tsc --noEmit",
@@ -32,5 +32,23 @@
   ],
   "publishConfig": {
     "access": "public"
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./adapters": {
+      "import": "./dist/adapters/index.mjs",
+      "require": "./dist/adapters/index.js",
+      "types": "./dist/adapters/index.d.ts"
+    },
+    "./adapters/prisma": {
+      "import": "./dist/adapters/prisma.mjs",
+      "require": "./dist/adapters/prisma.js",
+      "types": "./dist/adapters/prisma.d.ts"
+    }
   }
 }

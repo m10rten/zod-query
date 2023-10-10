@@ -16,7 +16,7 @@
   "dependencies": {
     "@prisma/client": "^5.4.1",
     "zod": "3.22.4",
-    "zod-query": "0.0.4"
+    "zod-query": "workspace:*"
   },
   "devDependencies": {
     "prisma": "5.4.1",
