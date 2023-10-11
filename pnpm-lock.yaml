@@ -92,9 +92,6 @@ importers:
       "@prisma/client":
         specifier: ^5.4.1
         version: 5.4.1(prisma@5.4.1)
-      "@zod-query/adapters":
-        specifier: workspace:*
-        version: link:../../packages/adapters
       zod:
         specifier: 3.22.4
         version: 3.22.4
@@ -114,15 +111,6 @@ importers:
       ts-node:
         specifier: ^10.9.1
         version: 10.9.1(@types/node@20.8.3)(typescript@5.2.2)
-
-  packages/adapters:
-    dependencies:
-      zod:
-        specifier: 3.22.4
-        version: 3.22.4
-      zod-query:
-        specifier: workspace:*
-        version: link:../zod-query
 
   packages/cli:
     dependencies:
@@ -156,8 +144,14 @@ importers:
 
   packages/zod-query:
     dependencies:
+      "@prisma/client":
+        specifier: ^5.4.0
+        version: 5.4.1(prisma@5.4.1)
+      prisma:
+        specifier: ^5.4.0
+        version: 5.4.1
       zod:
-        specifier: 3.22.4
+        specifier: ^3.22.4
         version: 3.22.4
 
 packages:
