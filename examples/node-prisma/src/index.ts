@@ -1,3 +1,3 @@
-// import { b } from "./client";
+import { b } from "./client";
 
-// const res = b.get();
+const res = b.schema.get();

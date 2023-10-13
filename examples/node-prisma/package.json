@@ -14,14 +14,14 @@
   "author": "",
   "license": "",
   "dependencies": {
-    "@prisma/client": "^5.4.1",
+    "@prisma/client": "5.4.1",
     "zod": "3.22.4",
     "zod-query": "workspace:*"
   },
   "devDependencies": {
     "prisma": "5.4.1",
     "@types/node": "20.8.3",
-    "nodemon": "^3.0.1",
-    "ts-node": "^10.9.1"
+    "nodemon": "3.0.1",
+    "ts-node": "10.9.1"
   }
 }

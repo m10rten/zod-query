@@ -17,6 +17,7 @@
     "packages:release": "changeset publish",
     "release:build": "changeset version",
     "release:add": "changeset",
+    "release:pre": "changeset pre",
     "typecheck": "turbo run typecheck"
   },
   "devDependencies": {

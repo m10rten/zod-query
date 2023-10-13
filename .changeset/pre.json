@@ -1,0 +1,8 @@
+{
+  "mode": "pre",
+  "tag": "next",
+  "initialVersions": {
+    "zod-query": "0.0.4"
+  },
+  "changesets": []
+}
