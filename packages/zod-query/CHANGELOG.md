@@ -1,5 +1,11 @@
 # zod-query
 
+## 0.0.5-next.0
+
+### Patch Changes
+
+- c90251e: Beta for prisma adapter
+
 ## 0.0.4
 
 ### Patch Changes
