@@ -1,0 +1,56 @@
+{
+  "name": "zod-query",
+  "version": "0.0.4",
+  "description": "",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "module": "./dist/index.mjs",
+  "scripts": {
+    "build": "tsup --format cjs,esm --dts",
+    "lint": "eslint src/**/*.ts",
+    "test": "jest",
+    "typecheck": "tsc --noEmit",
+    "test:coverage": "jest --coverage",
+    "test:ci": "jest --ci --passWithNoTests"
+  },
+  "keywords": [
+    "zod",
+    "query",
+    "validation",
+    "schema",
+    "database",
+    "typesafe"
+  ],
+  "author": "m10rten",
+  "license": "MIT",
+  "peerDependencies": {
+    "zod": "^3.22.4",
+    "prisma": "^5.4.0",
+    "@prisma/client": "^5.4.0"
+  },
+  "devDependencies": {},
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./adapters": {
+      "import": "./dist/adapters/index.mjs",
+      "require": "./dist/adapters/index.js",
+      "types": "./dist/adapters/index.d.ts"
+    },
+    "./adapters/prisma": {
+      "import": "./dist/adapters/prisma.mjs",
+      "require": "./dist/adapters/prisma.js",
+      "types": "./dist/adapters/prisma.d.ts"
+    }
+  }
+}
