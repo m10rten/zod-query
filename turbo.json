@@ -21,6 +21,11 @@
     "typecheck": {
       "cache": true,
       "persistent": true
+    },
+    "generate": {
+      "dependsOn": ["^build"],
+      "cache": true,
+      "persistent": true
     }
   }
 }

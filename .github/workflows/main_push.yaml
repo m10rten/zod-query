@@ -22,6 +22,11 @@ jobs:
       - run: pnpm i --frozen-lockfile
         name: Install dependencies
 
+      - name: Generate deps 🍪
+        run: pnpm generate
+        env:
+          CI: true
+
       - name: Check packages and create build 📦,🧪,🔨,⚡
         run: pnpm turbo --filter "./packages/**" build test lint typecheck
         env:

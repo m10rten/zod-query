@@ -18,7 +18,8 @@
     "release:build": "changeset version",
     "release:add": "changeset",
     "release:pre": "changeset pre",
-    "typecheck": "turbo run typecheck"
+    "typecheck": "turbo run typecheck",
+    "generate": "turbo run generate"
   },
   "devDependencies": {
     "@changesets/cli": "2.26.2",
