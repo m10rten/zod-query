@@ -8,8 +8,5 @@
     "@zod-query/cli": "0.0.0",
     "tsconfig": "0.0.0"
   },
-  "changesets": [
-    "loud-grapes-fail",
-    "wild-students-worry"
-  ]
+  "changesets": ["loud-grapes-fail", "wild-students-worry"]
 }
