@@ -2,10 +2,12 @@ import { z } from "zod";
 import DefaultAdapter from "@/adapters";
 import PrismaAdapter from "@/adapters/prisma";
 
+import { version } from "../package.json";
+
 // eslint-disable-next-line no-console
 console.info(`
   Thanks for installing 'zod-query'!
-  This is the 0.0.4 version with no functionality.
+  This is the ${version} version with no functionality.
 `);
 
 // The client we make easy to use
