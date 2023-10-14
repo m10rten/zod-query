@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { Prisma, PrismaClient } from "@prisma/client";
-import { IAdapter } from "..";
+import { IAdapter } from "zod-query";
 
 export class PrismaAdapter implements IAdapter {
   constructor(private _client: PrismaClient) {}

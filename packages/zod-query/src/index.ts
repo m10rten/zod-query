@@ -1,6 +1,5 @@
 import { z } from "zod";
 import DefaultAdapter from "@/adapters";
-import PrismaAdapter from "@/adapters/prisma";
 
 import { version } from "../package.json";
 
@@ -20,14 +19,13 @@ export interface IAdapter {
   toZod: <T>(entity: T) => z.AnyZodObject;
 }
 
-export type Adapter = PrismaAdapter | DefaultAdapter;
 type Prettify<T> = {
   [K in keyof T]: T[K];
   // eslint-disable-next-line @typescript-eslint/ban-types
 } & {};
 
 export type Options = {
-  adapter: Prettify<Adapter>;
+  adapter: Prettify<IAdapter>;
 };
 
 export const zq = <T>(options?: Options) => {

@@ -1,6 +1,6 @@
 {
-  "name": "zod-query",
-  "version": "0.0.5-next.0",
+  "name": "@zod-query/prisma-adapter",
+  "version": "0.0.0",
   "description": "",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -11,7 +11,8 @@
     "test": "jest",
     "typecheck": "tsc --noEmit",
     "test:coverage": "jest --coverage",
-    "test:ci": "jest --ci --passWithNoTests"
+    "test:ci": "jest --ci --passWithNoTests",
+    "generate": "prisma generate"
   },
   "keywords": [
     "zod",
@@ -24,9 +25,17 @@
   "author": "m10rten",
   "license": "MIT",
   "peerDependencies": {
-    "zod": "^3.22.4"
+    "zod": "^3.22.4",
+    "@prisma/client": "^5.4.0"
   },
-  "devDependencies": {},
+  "dependencies": {
+    "prisma": "^5.4.0",
+    "zod-query": "workspace:*"
+  },
+  "devDependencies": {
+    "@prisma/client": "^5.4.0",
+    "prisma": "^5.4.0"
+  },
   "files": [
     "dist"
   ],
@@ -39,16 +48,6 @@
       "import": "./dist/index.mjs",
       "require": "./dist/index.js",
       "types": "./dist/index.d.ts"
-    },
-    "./adapters": {
-      "import": "./dist/adapters/index.mjs",
-      "require": "./dist/adapters/index.js",
-      "types": "./dist/adapters/index.d.ts"
-    },
-    "./adapters/prisma": {
-      "import": "./dist/adapters/prisma.mjs",
-      "require": "./dist/adapters/prisma.js",
-      "types": "./dist/adapters/prisma.d.ts"
     }
   }
 }
