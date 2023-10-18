@@ -26,6 +26,10 @@
       "dependsOn": ["^build"],
       "cache": true,
       "persistent": true
+    },
+    "cli": {
+      "cache": true,
+      "persistent": true
     }
   }
 }
