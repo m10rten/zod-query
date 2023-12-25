@@ -74,8 +74,9 @@ const user = await client.users.create({
 
 ```ts
 import { zq } from "zod-query";
-import drizzle from "./db/drizzle"; // import your drizzle instance
 import { adapter } from "zod-query/adapters/orm/drizzle";
+import drizzle from "./db/drizzle"; // import your drizzle instance
+
 // or: import {drizzle} from "zod-query/adapters/orm";
 
 const client = zq({ adapter: adapter(drizzle) });

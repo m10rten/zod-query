@@ -1,12 +1,12 @@
+import { PrismaClient } from "@prisma/client";
+import { adapter } from "@zod-query/prisma-adapter";
+import { zq, type Options } from "zod-query";
+
 console.log("import PrismaClient");
 
-import { PrismaClient } from "@prisma/client";
-
 console.log("import Options, zq");
-import { type Options, zq } from "zod-query";
 
 console.log("import adapter");
-import { adapter } from "@zod-query/prisma-adapter";
 
 console.log("start");
 

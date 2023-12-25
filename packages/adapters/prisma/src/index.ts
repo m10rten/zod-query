@@ -1,5 +1,5 @@
-import { z } from "zod";
 import { Prisma, PrismaClient } from "@prisma/client";
+import { z } from "zod";
 import { IAdapter } from "zod-query";
 
 type ArrayElement<ArrayType extends readonly unknown[]> =
