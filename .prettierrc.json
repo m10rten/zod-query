@@ -11,5 +11,5 @@
   "jsxSingleQuote": false,
   "quoteProps": "as-needed",
   "endOfLine": "lf",
-  "plugins": []
+  "plugins": ["@ianvs/prettier-plugin-sort-imports"]
 }
