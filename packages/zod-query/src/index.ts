@@ -10,14 +10,14 @@ const main = async () => {
   for (const model of models) {
     console.log(`
     Model: ${model.name}
-    Fields: ${model.fields.map((f) => `${f.name}: ${f.type}`).join(", ")}
+    Fields: ${model.fields
+      .map((f) => `${f.name}: ${f.type}-${f.default}-${f.isReadOnly}-${f.isRequired}`)
+      .join(", ")}
     `);
     const infered = getInferedFromPrisma(model);
   }
   const names = getModelListAsString(models);
 };
-
-type Returned<T> = z.infer<typeof testSchema>;
 
 const getModelListAsString = (models: Prisma.DMMF.Model[]): (keyof typeof models)[] => {
   return models.map((m) => m.name as keyof typeof models);
@@ -27,12 +27,13 @@ const getInferedFromPrisma = <T extends Prisma.DMMF.Model>(model: T) => {
   const infered = z.object(
     Object.fromEntries(
       model.fields.map((f) => {
-        const typed = getZodTypeFromPrisma(f.type);
+        const typed = getZodTypeFromPrisma(f);
 
         return [f.name, typed];
       }),
     ),
   );
+
   return infered;
 };
 
@@ -40,6 +41,7 @@ const ZodTyped = {
   String: z.string(),
   Int: z.number(),
   Boolean: z.boolean(),
+  Unknown: z.unknown(),
 } as const;
 
 const Types = {
@@ -51,27 +53,38 @@ const Types = {
 const ZodTypes = [Types.String, Types.Int, Types.Boolean] as const;
 type ZodTypes = (typeof ZodTypes)[number];
 
-type ReturnZodType<T extends string> = T extends "String"
+type ReturnZodType<T extends Prisma.DMMF.Field["name"]> = T extends "String"
   ? z.ZodString
   : T extends "Int"
-    ? z.ZodNumber
-    : T extends "Boolean"
-      ? z.ZodBoolean
-      : z.ZodUnknown;
+  ? z.ZodNumber
+  : T extends "Boolean"
+  ? z.ZodBoolean
+  : z.ZodUnknown;
 
 type Example = ReturnZodType<"String">;
 
-const getZodTypeFromPrisma = <T extends string>(type: T): ReturnZodType<T> => {
-  switch (type) {
+const getZodTypeFromPrisma = <T extends Prisma.DMMF.Field>(
+  field: T,
+): ReturnZodType<T["name"]> => {
+  let statement: z.ZodTypeAny;
+  switch (field["name"]) {
     case Types.String:
-      return ZodTyped.String as ReturnZodType<T>;
+      statement = ZodTyped.String;
+      break;
     case Types.Int:
-      return ZodTyped.Int as ReturnZodType<T>;
+      statement = ZodTyped.Int;
+      break;
     case Types.Boolean:
-      return ZodTyped.Boolean as ReturnZodType<T>;
+      statement = ZodTyped.Boolean;
+      break;
     default:
-      return ZodTyped.String as ReturnZodType<T>;
+      statement = ZodTyped.Unknown;
+      break;
   }
+  if (field.isReadOnly) {
+    statement = statement.readonly();
+  }
+  return statement as ReturnZodType<T["name"]>;
 };
 
 const testSchema = z.object({
