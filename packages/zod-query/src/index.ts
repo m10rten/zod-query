@@ -56,10 +56,10 @@ type ZodTypes = (typeof ZodTypes)[number];
 type ReturnZodType<T extends Prisma.DMMF.Field["name"]> = T extends "String"
   ? z.ZodString
   : T extends "Int"
-  ? z.ZodNumber
-  : T extends "Boolean"
-  ? z.ZodBoolean
-  : z.ZodUnknown;
+    ? z.ZodNumber
+    : T extends "Boolean"
+      ? z.ZodBoolean
+      : z.ZodUnknown;
 
 type Example = ReturnZodType<"String">;
 
