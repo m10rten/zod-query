@@ -1,0 +1,58 @@
+{
+  "name": "@zod-query/cli",
+  "version": "0.0.1-next.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "module": "dist/index.mjs",
+  "bin": {
+    "zoda": "dist/index.mjs"
+  },
+  "scripts": {
+    "dev": "nodemon src/index.ts",
+    "build": "tsup --format cjs,esm --dts",
+    "lint": "eslint src/**/*.ts",
+    "test": "jest",
+    "typecheck": "tsc --noEmit",
+    "test:coverage": "jest --coverage",
+    "test:ci": "jest --ci --passWithNoTests",
+    "cli": "pnpm dev"
+  },
+  "keywords": [
+    "zod",
+    "query",
+    "validation",
+    "schema",
+    "database",
+    "typesafe"
+  ],
+  "author": "m10rten",
+  "license": "MIT",
+  "peerDependencies": {
+    "zod": "3.22.4",
+    "zod-query": "workspace:*"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "dependencies": {
+    "commander": "11.0.0",
+    "execa": "8.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "20.8.4",
+    "nodemon": "^3.0.1",
+    "ts-node": "^10.9.1"
+  }
+}

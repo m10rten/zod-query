@@ -1,0 +1,12 @@
+{
+  "mode": "pre",
+  "tag": "next",
+  "initialVersions": {
+    "zod-query": "0.0.4",
+    "web": "0.1.0",
+    "zod-query-examples-node": "0.0.0",
+    "@zod-query/cli": "0.0.0",
+    "tsconfig": "0.0.0"
+  },
+  "changesets": ["loud-grapes-fail", "wild-students-worry"]
+}

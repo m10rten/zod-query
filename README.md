@@ -22,6 +22,21 @@ yarn add zod-query
 pnpm add zod-query
 ```
 
+## Timeline
+
+### Active development
+
+- [ ] Runtime & Compile Zod support for Prisma (get Zod types from generated Prisma client)
+- [ ] Create adapter spec for easy-to-make adapters for other ORMs/datasources.
+
+### Planned features
+
+- [ ] Runtime & Compile Zod support for Drizzle (get Zod types from Drizzle schemas)
+- [ ] Support for raw SQL queries
+- [ ] Data validation for input in adapters
+- [ ] Act-as-DTO for models, get a specific data shape from a model
+- [ ] Cli tool to select provider (Prisma, Drizzle, etc) and generate SQL queries for no-ORM usage
+
 ## Usage
 
 ### Using an adapter (recommended)
@@ -59,8 +74,9 @@ const user = await client.users.create({
 
 ```ts
 import { zq } from "zod-query";
-import drizzle from "./db/drizzle"; // import your drizzle instance
 import { adapter } from "zod-query/adapters/orm/drizzle";
+import drizzle from "./db/drizzle"; // import your drizzle instance
+
 // or: import {drizzle} from "zod-query/adapters/orm";
 
 const client = zq({ adapter: adapter(drizzle) });
