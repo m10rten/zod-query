@@ -11,7 +11,9 @@
     "test": "jest",
     "typecheck": "tsc --noEmit",
     "test:coverage": "jest --coverage",
-    "test:ci": "jest --ci --passWithNoTests"
+    "test:ci": "jest --ci --passWithNoTests",
+    "generate": "prisma generate",
+    "dev": "nodemon src/index.ts"
   },
   "keywords": [
     "zod",
@@ -24,11 +26,12 @@
   "author": "m10rten",
   "license": "MIT",
   "peerDependencies": {
-    "zod": "^3.22.4",
-    "prisma": "^5.4.0",
-    "@prisma/client": "^5.4.0"
+    "zod": "^3.22.4"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@prisma/client": "5.7.1",
+    "prisma": "5.7.1"
+  },
   "files": [
     "dist"
   ],
